@@ -12,6 +12,20 @@ Array.from(numbers).forEach(function(numbers){
 	});
 });
 
+// pick operation and add operation to input field value
+const operation = document.querySelector('.calculator-operations-wrap').getElementsByTagName('li');
+
+Array.from(operation).forEach(function(operation){
+	operation.addEventListener('click', function(e){
+
+		const li = e.target.innerHTML;
+		const inputField = document.querySelector('.calculator-input');
+
+		inputField.value += li;
+
+	});
+});
+
 // clear input field value
 const clear = document.querySelector('.input-clear');
 
@@ -23,5 +37,18 @@ clear.addEventListener('click', function(e){
 
 });
 
+// alert input value on equals
+const calculateValue = document.querySelector('.calculate-wrap').getElementsByTagName('li');
+
+Array.from(calculateValue).forEach(function(calculateValue){
+	calculateValue.addEventListener('click', function(e){
+
+		const inputField = document.querySelector('.calculator-input');
+		const result = inputField.value;
+
+		alert(eval(result));
+
+	});
+});
 
 

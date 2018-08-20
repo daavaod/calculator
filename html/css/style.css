@@ -373,3 +373,29 @@ h2 {
   background-color: grey;
   color: white;
 }
+
+.calculate-wrap {
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.calculate-wrap li {
+  box-sizing: border-box;
+  text-align: center;
+  border: 1px solid grey;
+  flex: 1 1 auto;
+  width: 16%;
+  height: 50px;
+  line-height: 50px;
+  margin: 5px;
+  font-size: 20px;
+}
+.calculate-wrap li:hover {
+  cursor: pointer;
+  background-color: grey;
+  color: white;
+}
