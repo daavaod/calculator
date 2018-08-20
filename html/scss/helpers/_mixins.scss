@@ -1,0 +1,46 @@
+/*----------  mixins
+------------------------------------------------------------------------------*/
+
+@mixin responsive($device) {
+	
+	@if $device == mobile {
+	  @media only screen and (min-width : 320px) and (max-width : 767px) { @content; }
+	}
+
+	@if $device == tablet {
+	  @media only screen and (min-width : 480px) and (max-width : 1366px) { @content; }
+	}
+
+	@if $device == desktop {
+	  @media only screen and (min-width : 1224px) { @content; }
+ 	}
+}
+
+//responsive sprite
+@mixin sprite($sprite) {
+	background: sprite-url($icons) no-repeat sprite-position($icons, $sprite);
+	height: image-height(sprite-file($icons, $sprite));
+	width: image-width(sprite-file($icons, $sprite));
+}
+
+// IE gradient 
+@mixin filter-gradient($start-color, $end-color, $orientation: vertical) {
+ 	@include has-layout;
+  	$gradient-type: if($orientation == vertical, 0, 1);
+ 	@if $legacy-support-for-ie6 or $legacy-support-for-ie7 or $legacy-support-for-ie8 {
+    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=#{$gradient-type}, startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}'); }
+}
+
+@mixin input-placeholder {
+	&::-webkit-input-placeholder {
+		@content;
+	}
+
+	&:-moz-placeholder {
+		@content;
+	}
+
+	&:-ms-input-placeholder {
+		@content;
+	}
+}
