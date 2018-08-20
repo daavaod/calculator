@@ -1,28 +1,27 @@
-function tarabice(){
-	var taraba = "#";
+// pick numbers, add clicked numbers to input field value
+const numbers = document.querySelector('.calculator-numbers-wrap').getElementsByTagName('li');
 
-	while (taraba.length <= 7) {
-		console.log(taraba);
-		taraba += "#";
-	}
-}
-tarabice();
+Array.from(numbers).forEach(function(numbers){
+	numbers.addEventListener('click', function(e){
 
-function fizzBuzz() {
-	for (var counter = 1; counter <= 100; counter++){
-		/*if(counter % 3 == 0) {
-			console.log("Fizz");
-		}else if (counter % 5 == 0){
-			console.log("Buzz");
-		}*/if ((counter % 3 == 0) && (counter % 5 == 0)){
-			console.log("FizzBuzz");
-		}else if (counter % 3 == 0){
-			console.log("Fizz3");
-		}else if (counter % 5 == 0){
-			console.log("Buzz5");
-		}else {
-			console.log(counter);
-		}
-	}
-}
-fizzBuzz();
+		const li = e.target.innerHTML;
+		const inputField = document.querySelector('.calculator-input');
+
+		inputField.value += li;
+
+	});
+});
+
+// clear input field value
+const clear = document.querySelector('.input-clear');
+
+clear.addEventListener('click', function(e){
+
+	const inputField = document.querySelector('.calculator-input');
+
+	inputField.value = "";
+
+});
+
+
+
