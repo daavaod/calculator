@@ -11,13 +11,14 @@ const clear = document.querySelector('.input-clear');
 const calculateValue = document.querySelector('.calculate-wrap').getElementsByTagName('li');
 // operation track
 const operationTrack = document.querySelector('.operation-track');
+// input field
+const inputField = document.querySelector('.calculator-input');
 
 // pick numbers, add clicked numbers to input field value
 Array.from(numbers).forEach(function(numbers){
 	numbers.addEventListener('click', function(e){
 
 		const li = e.target.innerHTML;
-		const inputField = document.querySelector('.calculator-input');
 
 		inputField.value += li;
 
@@ -29,7 +30,6 @@ Array.from(operation).forEach(function(operation){
 	operation.addEventListener('click', function(e){
 
 		const li = e.target.innerHTML;
-		const inputField = document.querySelector('.calculator-input');
 
 		inputField.value += li;
 
@@ -38,8 +38,6 @@ Array.from(operation).forEach(function(operation){
 
 // clear input field value
 clear.addEventListener('click', function(e){
-
-	const inputField = document.querySelector('.calculator-input');
 
 	inputField.value = "";
 	operationTrack.innerHTML = "";
@@ -50,7 +48,6 @@ clear.addEventListener('click', function(e){
 Array.from(calculateValue).forEach(function(calculateValue){
 	calculateValue.addEventListener('click', function(e){
 
-		const inputField = document.querySelector('.calculator-input');
 		const result = inputField.value;
 		const numbersOperations = /^[^+*/](?!.*([.+\-*/]){2})[0-9().+\-*/]+$/; //no more than two operations in a row
 
