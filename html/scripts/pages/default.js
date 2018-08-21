@@ -1,6 +1,13 @@
-// pick numbers, add clicked numbers to input field value
+// numbers
 const numbers = document.querySelector('.calculator-numbers-wrap').getElementsByTagName('li');
+// operations
+const operation = document.querySelector('.calculator-operations-wrap').getElementsByTagName('li');
+// input field
+const clear = document.querySelector('.input-clear');
+// equals (submit button)
+const calculateValue = document.querySelector('.calculate-wrap').getElementsByTagName('li');
 
+// pick numbers, add clicked numbers to input field value
 Array.from(numbers).forEach(function(numbers){
 	numbers.addEventListener('click', function(e){
 
@@ -13,8 +20,6 @@ Array.from(numbers).forEach(function(numbers){
 });
 
 // pick operation and add operation to input field value
-const operation = document.querySelector('.calculator-operations-wrap').getElementsByTagName('li');
-
 Array.from(operation).forEach(function(operation){
 	operation.addEventListener('click', function(e){
 
@@ -27,8 +32,6 @@ Array.from(operation).forEach(function(operation){
 });
 
 // clear input field value
-const clear = document.querySelector('.input-clear');
-
 clear.addEventListener('click', function(e){
 
 	const inputField = document.querySelector('.calculator-input');
@@ -38,8 +41,6 @@ clear.addEventListener('click', function(e){
 });
 
 // check if valid data is entered and alert input value on equals
-const calculateValue = document.querySelector('.calculate-wrap').getElementsByTagName('li');
-
 Array.from(calculateValue).forEach(function(calculateValue){
 	calculateValue.addEventListener('click', function(e){
 
