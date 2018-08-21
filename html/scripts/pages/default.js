@@ -37,7 +37,7 @@ clear.addEventListener('click', function(e){
 
 });
 
-// alert input value on equals
+// check if valid data is entered and alert input value on equals
 const calculateValue = document.querySelector('.calculate-wrap').getElementsByTagName('li');
 
 Array.from(calculateValue).forEach(function(calculateValue){
@@ -45,8 +45,15 @@ Array.from(calculateValue).forEach(function(calculateValue){
 
 		const inputField = document.querySelector('.calculator-input');
 		const result = inputField.value;
+		const letterOperation = /^[0-9.+\-*/]+$/;
 
-		alert(eval(result));
+		if (inputField.value.match(letterOperation))
+		{
+			alert(eval(result));
+		}else
+		{
+			alert("Please enter valid numbers and operations only.");
+		}	
 
 	});
 });
