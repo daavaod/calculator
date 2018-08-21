@@ -45,12 +45,13 @@ Array.from(calculateValue).forEach(function(calculateValue){
 
 		const inputField = document.querySelector('.calculator-input');
 		const result = inputField.value;
-		const letterOperation = /^[0-9.+\-*/]+$/;
+		const numbersOperations = /^[^+*/](?!.*([.+\-*/]){2})[0-9.+\-*/]+$/; //no more than two operations in a row
 
-		if (inputField.value.match(letterOperation))
+		if (inputField.value.match(numbersOperations))
 		{
 			alert(eval(result));
-		}else
+		}
+		else
 		{
 			alert("Please enter valid numbers and operations only.");
 		}	
