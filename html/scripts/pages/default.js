@@ -49,7 +49,7 @@ Array.from(calculateValue).forEach(function(calculateValue){
 
 		if (inputField.value.match(numbersOperations))
 		{
-			alert(eval(result));
+			inputField.value = eval(result);
 		}
 		else
 		{
