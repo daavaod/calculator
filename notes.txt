@@ -3,4 +3,6 @@ ToDo:
 - add clear-one-character button with functionality
 - submit result on enter
 - better naming for functions and variables
-- 
+
+Bug:
+- calculation with 0 at front is not working (e.g. 025+5)
