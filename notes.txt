@@ -1,2 +1,5 @@
 ToDo:
 - replace eval() function
+- add clear-one-character button with functionality
+- submit result on enter
+- 
