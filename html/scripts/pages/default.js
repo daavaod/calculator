@@ -52,7 +52,7 @@ Array.from(calculateValue).forEach(function(calculateValue){
 
 		const inputField = document.querySelector('.calculator-input');
 		const result = inputField.value;
-		const numbersOperations = /^[^+*/](?!.*([.+\-*/]){2})[0-9.+\-*/]+$/; //no more than two operations in a row
+		const numbersOperations = /^[^+*/](?!.*([.+\-*/]){2})[0-9().+\-*/]+$/; //no more than two operations in a row
 
 		if (inputField.value.match(numbersOperations))
 		{

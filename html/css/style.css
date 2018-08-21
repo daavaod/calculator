@@ -301,28 +301,34 @@ h2 {
   padding: 10px;
 }
 .calculator-wrap {
-  border: 1px solid #993399;
+  border: 1px solid #862d86;
+  background-color: #f2f2f2;
   padding: 5px;
   width: 100%;
 }
 .calculator-input-wrap {
   margin-bottom: 10px;
   position: relative;
+  border: 1px solid #862d86;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  overflow: hidden;
 }
 .calculator-input {
   width: 100%;
   box-sizing: border-box;
   padding: 5px;
   padding-top: 17px;
-  border: 1px solid #993399;
+  background-color: #f2f2f2;
   height: 50px;
   line-height: 50px;
   text-align: right;
   font-size: 20px;
 }
 .calculator-function-wrap {
-  border: 1px solid #993399;
+  border: 1px solid #862d86;
   padding: 5px;
+  border-radius: 5px;
 }
 .calculator-numbers-wrap {
   width: 100%;
@@ -337,20 +343,21 @@ h2 {
 .calculator-numbers-wrap li {
   box-sizing: border-box;
   text-align: center;
-  border: 1px solid #993399;
+  border: 1px solid #862d86;
   flex: 0 1 auto;
   width: 30%;
   height: 50px;
   line-height: 50px;
   margin: 5px;
   font-size: 20px;
-  background-color: #fff;
+  color: #fff;
+  background-color: #862d86;
   -webkit-transition: all 0.2s; /* Safari */
   transition: all 0.2s;
 }
 .calculator-numbers-wrap li:hover {
   cursor: pointer;
-  background-color: #993399;
+  background-color: #862d86;
   border: 1px solid #fff;
   color: white;
 }
@@ -369,7 +376,9 @@ h2 {
 .calculator-operations-wrap li {
   box-sizing: border-box;
   text-align: center;
-  border: 1px solid #993399;
+  border: 1px solid #862d86;
+  background-color: #862d86;
+  color: #fff;
   flex: 1 1 auto;
   width: 16%;
   height: 50px;
@@ -381,7 +390,7 @@ h2 {
 }
 .calculator-operations-wrap li:hover {
   cursor: pointer;
-  background-color: #993399;
+  background-color: #862d86;
   border: 1px solid #fff;
   color: white;
 }
@@ -403,7 +412,9 @@ h2 {
 .calculate-wrap li {
   box-sizing: border-box;
   text-align: center;
-  border: 1px solid #993399;
+  border: 1px solid #862d86;
+  background-color: #862d86;
+  color: #fff;
   flex: 1 1 auto;
   width: 16%;
   height: 50px;
@@ -415,7 +426,7 @@ h2 {
 }
 .calculate-wrap li:hover {
   cursor: pointer;
-  background-color: #993399;
+  background-color: #862d86;
   border: 1px solid #fff;
   color: white;
 }
