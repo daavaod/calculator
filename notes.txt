@@ -3,6 +3,12 @@ ToDo:
 - add clear-one-character button with functionality
 - submit result on enter
 - better naming for functions and variables
+- change operation on click - atm you can enter multiple operations in a row and alert will pop up
+- add . on ui
+- 
 
 Bug:
 - calculation with 0 at front is not working (e.g. 025+5)
+- 12(/25) is not working
+- limit keyboard character input (to be only allowed characters)
+- 
