@@ -86,7 +86,7 @@ Array.from(calculateValue).forEach(function(calculateValue){
 				//console.log(number);
 			}
 			
-
+//comment
 
 
 
