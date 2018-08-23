@@ -54,8 +54,48 @@ Array.from(calculateValue).forEach(function(calculateValue){
 		if (inputField.value.match(numbersOperations))
 		{
 			operationTrack.innerHTML = inputField.value + " =";
-			inputField.value = eval(result);
+			//inputField.value = eval(result);
+
+			//const splitting = result.split(/[+\-*/]/);
+			/*const arraylist = Array.from(result);
+			var number = "";
+			for (let i=0; i<arraylist.length; i++) {
+				number += arraylist[i];
+			}
+			alert(number);*/
+
+			var resultThis = result.split(/\b/);
+			console.log(resultThis);
+			var number = resultThis[0];
+			for (let i=0; i < resultThis.length; i++) {
+				//number += resultThis[i];
+				//number = number + resultThis[i];
+				if(isNaN(number) == false){
+					number += parseInt(resultThis[i]) + "broj ";
+					console.log(number);
+					//console.log(typeof number);
+					//newNUmber += resultThis[i];
+				}
+				else
+				{
+					number += resultThis[i] + "znak ";
+					//console.log(typeof number);
+					console.log(number);
+					//console.log(" znak ")
+				}
+				//console.log(number);
+			}
 			
+
+
+
+
+
+
+
+
+
+			//alert(resultThis);
 		}
 		else
 		{
