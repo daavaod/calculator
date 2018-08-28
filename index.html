@@ -8,7 +8,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Awesome Calculator</title>
+		<title>Simple Calculator</title>
 		<meta name="description" content="">
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 		<link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -23,32 +23,30 @@
 			<div class="calculator-wrap">
 				<div class="calculator-input-wrap">
 					<div class="operation-track"></div>
-					<input type="text" class="calculator-input" value="0">
+					<input type="text" class="calculator-input" value="">
 				</div>
 				<div class="calculator-function-wrap">
 					<ul class="calculator-numbers-wrap">
-						<li>1</li>
-						<li>2</li>
-						<li>3</li>
-						<li>4</li>
-						<li>5</li>
-						<li>6</li>
-						<li>7</li>
-						<li>8</li>
-						<li>9</li>
-						<li>0</li>
+						<li><button>1</button></li>
+						<li><button>2</button></li>
+						<li><button>3</button></li>
+						<li><button>4</button></li>
+						<li><button>5</button></li>
+						<li><button>6</button></li>
+						<li><button>7</button></li>
+						<li><button>8</button></li>
+						<li><button>9</button></li>
+						<li><button>0</button></li>
 					</ul>
 					<ul class="calculator-operations-wrap">
-						<li class="input-clear">C</li>
-						<li>+</li>
-						<li>-</li>
-						<li>*</li>
-						<li>/</li>
-						<li>(</li>
-						<li>)</li>
+						<li class="input-clear"><button>CA</button></li>
+						<li><button data-operation="add">+</button></li>
+						<li><button data-operation="subtrack">-</button></li>
+						<li><button data-operation="multiply">*</button></li>
+						<li><button data-operation="divide">/</button></li>
 					</ul>
 					<ul class="calculate-wrap">
-						<li>=</li>
+						<li><button>=</button></li>
 					</ul>
 				</div>
 			</div>

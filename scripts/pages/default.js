@@ -18,9 +18,19 @@ const inputField = document.querySelector('.calculator-input');
 Array.from(numbers).forEach(function(numbers){
 	numbers.addEventListener('click', function(e){
 
-		const li = e.target.innerHTML;
+		const number = e.target;
+		const numberContent = number.textContent;
+		const operationsReg = /[+\-*/]/;
 
-		inputField.value += li;
+		if(inputField.value.match(operationsReg)) {
+			inputField.value = '';
+			inputField.value += numberContent;
+			operationTrack.textContent += numberContent;
+		}
+		else{
+			inputField.value += numberContent;
+			operationTrack.textContent += numberContent;
+		}
 
 	});
 });
@@ -28,10 +38,20 @@ Array.from(numbers).forEach(function(numbers){
 // pick operation and add operation to input field value
 Array.from(operation).forEach(function(operation){
 	operation.addEventListener('click', function(e){
+		
+		
+		const operation = e.target;
+		const operationContent = operation.textContent;
 
-		const li = e.target.innerHTML;
+		firstValue = inputField.value;
+		inputField.value = operationContent;
+		operastionSetValue = operation.dataset.operation;
+		operationTrack.textContent += operationContent;
 
-		inputField.value += li;
+		if(operationContent !== 'CA') {
+			let firstValueData = inputField.dataset.firstValue = firstValue;
+			let operastionSetValueData = inputField.dataset.operastionSetValue = operastionSetValue;
+		}
 
 	});
 });
@@ -39,70 +59,57 @@ Array.from(operation).forEach(function(operation){
 // clear input field value
 clear.addEventListener('click', function(e){
 
-	inputField.value = "";
-	operationTrack.innerHTML = "";
+	inputField.value = '';
+	operationTrack.textContent = '';
 
 });
 
-// check if valid data is entered and put result in input field
 Array.from(calculateValue).forEach(function(calculateValue){
 	calculateValue.addEventListener('click', function(e){
 
-		const result = inputField.value;
-		const numbersOperations = /^[^+*/](?!.*([.+\-*/]){2})[0-9().+\-*/]+$/; //no more than two operations in a row
-
-		if (inputField.value.match(numbersOperations))
-		{
-			operationTrack.innerHTML = inputField.value + " =";
-			//inputField.value = eval(result);
-
-			//const splitting = result.split(/[+\-*/]/);
-			/*const arraylist = Array.from(result);
-			var number = "";
-			for (let i=0; i<arraylist.length; i++) {
-				number += arraylist[i];
-			}
-			alert(number);*/
-
-			var resultThis = result.split(/\b/);
-			console.log(resultThis);
-			var number = resultThis[0];
-			for (let i=0; i < resultThis.length; i++) {
-				//number += resultThis[i];
-				//number = number + resultThis[i];
-				if(isNaN(number) == false){
-					number += parseInt(resultThis[i]) + "broj ";
-					console.log(number);
-					//console.log(typeof number);
-					//newNUmber += resultThis[i];
-				}
-				else
-				{
-					number += resultThis[i] + "znak ";
-					//console.log(typeof number);
-					console.log(number);
-					//console.log(" znak ")
-				}
-				//console.log(number);
-			}
-			
-//comment
-
-
-
-
-
-
-
-
-			//alert(resultThis);
+		let result = '';
+		const firstValue = inputField.dataset.firstValue;
+		const operation = inputField.dataset.operastionSetValue;
+		
+		if(operation === 'add') {
+			result = parseInt(firstValue) + parseInt(inputField.value);
+			inputField.value = result;
 		}
-		else
-		{
-			alert("Incorrect data");
-		}	
+		if(operation === 'subtrack') {
+			result = parseInt(firstValue) - parseInt(inputField.value);
+			inputField.value = result;
+		}
+		if(operation === 'multiply') {
+			result = parseInt(firstValue) * parseInt(inputField.value);
+			inputField.value = result;
+		}
+		if(operation === 'divide') {
+			result = parseInt(firstValue) / parseInt(inputField.value);
+			inputField.value = result;
+		}
+		
 
 	});
 });
+
+// check if valid data is entered and put result in input field
+//Array.from(calculateValue).forEach(function(calculateValue){
+	//calculateValue.addEventListener('click', function(e){
+
+		//const result = inputField.value;
+		//const numbersOperations = /^[^+*/](?!.*([.+\-*/]){2})[0-9().+\-*/]+$/; //no more than two operations in a row
+
+		//if (inputField.value.match(numbersOperations))
+		//{
+			//operationTrack.innerHTML = inputField.value + " =";
+			//inputField.value = eval(result);
+		//}
+		//else
+		//{
+			//alert("Incorrect data");
+		//}	
+
+	//});
+//});
 
 

@@ -342,10 +342,16 @@ h2 {
 }
 .calculator-numbers-wrap li {
   box-sizing: border-box;
+  width: 30%;
+  flex: 0 1 auto;
+  margin: 5px;
+}
+.calculator-numbers-wrap li button {
+  box-sizing: border-box;
   text-align: center;
   border: 1px solid #862d86;
   flex: 0 1 auto;
-  width: 30%;
+  width: 100%;
   height: 50px;
   line-height: 50px;
   margin: 5px;
@@ -355,14 +361,18 @@ h2 {
   -webkit-transition: all 0.2s; /* Safari */
   transition: all 0.2s;
 }
-.calculator-numbers-wrap li:hover {
+.calculator-numbers-wrap li button:hover {
   cursor: pointer;
   background-color: #862d86;
   border: 1px solid #fff;
   color: white;
 }
-.calculator-numbers-wrap li:active {
+.calculator-numbers-wrap li button:active {
   transform: scale(0.9);
+  outline: none;
+}
+.calculator-numbers-wrap li button:focus {
+  outline: none;
 }
 .calculator-operations-wrap {
   width: 100%;
@@ -375,27 +385,35 @@ h2 {
 }
 .calculator-operations-wrap li {
   box-sizing: border-box;
+  flex: 1 1 auto;
+  width: 16%;
+  margin: 5px;
+}
+.calculator-operations-wrap li button {
+  box-sizing: border-box;
   text-align: center;
   border: 1px solid #862d86;
   background-color: #862d86;
   color: #fff;
-  flex: 1 1 auto;
-  width: 16%;
+  width: 100%;
   height: 50px;
   line-height: 50px;
-  margin: 5px;
   font-size: 20px;
   -webkit-transition: all 0.2s; /* Safari */
   transition: all 0.2s;
 }
-.calculator-operations-wrap li:hover {
+.calculator-operations-wrap li button:hover {
   cursor: pointer;
   background-color: #862d86;
   border: 1px solid #fff;
   color: white;
 }
-.calculator-operations-wrap li:active {
+.calculator-operations-wrap li button:active {
   transform: scale(0.9);
+  outline: none;
+}
+.calculator-operations-wrap li button:focus {
+  outline: none;
 }
 
 .calculate-wrap {
@@ -411,27 +429,36 @@ h2 {
 }
 .calculate-wrap li {
   box-sizing: border-box;
+  flex: 1 1 auto;
+  width: 100%;
+  margin: 5px;
+}
+.calculate-wrap li button {
+  box-sizing: border-box;
   text-align: center;
   border: 1px solid #862d86;
   background-color: #862d86;
   color: #fff;
   flex: 1 1 auto;
-  width: 16%;
+  width: 100%;
   height: 50px;
   line-height: 50px;
-  margin: 5px;
   font-size: 20px;
   -webkit-transition: all 0.2s; /* Safari */
   transition: all 0.2s;
 }
-.calculate-wrap li:hover {
+.calculate-wrap li button:hover {
   cursor: pointer;
   background-color: #862d86;
   border: 1px solid #fff;
   color: white;
 }
-.calculate-wrap li:active {
+.calculate-wrap li button:active {
   transform: scale(0.9);
+  outline: none;
+}
+.calculate-wrap li button:focus {
+  outline: none;
 }
 .operation-track {
   position: absolute;
